@@ -1,0 +1,325 @@
+/* =========================
+   SPACE EXPLORER
+   ========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Courier New", monospace;
+    min-height: 100vh;
+    overflow-x: hidden;
+    color: white;
+
+    /* Background luar angkasa */
+    background:
+        radial-gradient(circle at 20% 30%, #243b80 0%, transparent 20%),
+        radial-gradient(circle at 80% 70%, #541878 0%, transparent 20%),
+        linear-gradient(135deg, #02010a, #08051c, #000);
+}
+
+img {
+    display: block;
+
+    width: 150px;
+    height: 150px;
+
+    object-fit: cover;
+
+    margin: 20px auto;
+
+    border-radius: 20px;
+}
+
+@keyframes muncul {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+section {
+    width: 100%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    padding: 20px;
+}
+
+.PREM {
+    width: 90%;
+    max-width: 500px;
+    
+    padding: 30px;
+    
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.1);
+    
+    border: 3px solid #0066ff;
+    border-radius: 20px;
+
+    backdrop-filter: blur(10px);
+
+    box-shadow:
+        0 0 10px #0066ff,
+        0 0 30px #8000ff;
+}
+
+
+p {
+    text-align: center;
+    margin: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+button {
+    
+    display: block;
+    margin: 20px auto;
+    
+    font-family: "Watermelon Sugar", cursive;
+    
+        width: 120px;
+    height: 40px;
+
+    color: white;
+
+    background:
+        linear-gradient(#000000, #000000) padding-box,
+        linear-gradient(90deg, #0066ff, #8000ff) border-box;
+
+    border: 3px solid transparent;
+    border-radius: 20px;
+
+    box-shadow:
+        0 0 5px #00aaff,
+        0 0 15px #00aaff,
+        0 0 30px #00aaff;
+
+    cursor: pointer;
+
+    transition: transform 0.1s;
+}
+
+button:active {
+    transform: scale(1.1);
+    
+}
+
+/* Bintang */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+
+    background-image:
+        radial-gradient(white 1px, transparent 1px),
+        radial-gradient(white 1px, transparent 1px);
+
+    background-size: 80px 80px, 130px 130px;
+    background-position: 0 0, 40px 60px;
+
+    opacity: 0.5;
+}
+
+/* =========================
+   HEADER
+   ========================= */
+
+header {
+    position: relative;
+    z-index: 2;
+
+    text-align: center;
+    padding: 40px 20px 20px;
+}
+
+header h1 {
+    font-size: 42px;
+    letter-spacing: 5px;
+
+    text-shadow:
+        0 0 10px #6c8cff,
+        0 0 25px #6c8cff;
+}
+
+header p {
+    margin-top: 10px;
+    color: #aaa;
+    font-size: 16px;
+}
+
+/* =========================
+   PLANET
+   ========================= */
+
+.planet-container {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 50px auto;
+}
+
+.planet {
+    width: 220px;
+    height: 220px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #80aaff,
+            #3154c5 35%,
+            #111b62 70%,
+            #050718
+        );
+
+    box-shadow:
+        0 0 20px #557cff,
+        0 0 50px #3154c5,
+        0 0 100px rgba(70, 100, 255, 0.5);
+
+    animation: float 4s ease-in-out infinite;
+}
+
+/* =========================
+   MENU
+   ========================= */
+
+.menu {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 20px;
+
+    padding: 20px;
+}
+
+.planet-button {
+    width: 150px;
+    padding: 15px;
+
+    color: white;
+    background: rgba(255, 255, 255, 0.08);
+
+    border: 1px solid #557cff;
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    backdrop-filter: blur(8px);
+
+    transition: 0.3s;
+}
+
+.planet-button:hover {
+    transform: translateY(-7px) scale(1.05);
+
+    background: rgba(85, 124, 255, 0.2);
+
+    box-shadow:
+        0 0 10px #557cff,
+        0 0 30px #557cff;
+}
+
+/* =========================
+   INFO BOX
+   ========================= */
+
+.info {
+    position: relative;
+    z-index: 2;
+
+    width: min(90%, 700px);
+
+    margin: 30px auto;
+    padding: 25px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    border: 1px solid rgba(120, 150, 255, 0.6);
+    border-radius: 20px;
+
+    backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 0 20px rgba(70, 100, 255, 0.2);
+}
+
+.info h2 {
+    margin-bottom: 10px;
+
+    color: #7f9dff;
+
+    text-shadow: 0 0 10px #557cff;
+}
+
+.info p {
+    color: #ccc;
+    line-height: 1.7;
+}
+
+/* =========================
+   ANIMATION
+   ========================= */
+
+@keyframes float {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 600px) {
+
+    header h1 {
+        font-size: 28px;
+    }
+
+    .planet {
+        width: 170px;
+        height: 170px;
+    }
+
+    .planet-button {
+        width: 130px;
+    }
+}
